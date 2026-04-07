@@ -12,7 +12,7 @@
             <form id="crypto-quoter-form">
                 <div class="input-container">
                     <label for="currency">Select your currency</label>
-                    <select class="coin-input">
+                    <select class="coin-input" id="currency">
                         <option selected disabled value="">Select your currency</option>
                         <option value="USD">U.S Dollar</option>
                         <option value="EUR">Euro</option>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="input-container">
                     <label for="crypto">Select your cryptocurrency</label>
-                    <select class="crypto-input">
+                    <select class="crypto-input" id="crypto">
                         <option selected disabled value="">Select your cryptocurrency</option>
                         <option value="BTC">Bitcoin</option>
                         <option value="ETH">Ethereum</option>
@@ -30,7 +30,7 @@
                     </select>
                 </div>
                 <div class="input-container">
-                    <label for="crypto">Select your cryptocurrency</label>
+                    <label for="crypto">Enter the amount</label>
                     <input type="number" class="coin-input" id="amount" placeholder="Amount">
                 </div>
                 <button id="form-btn" type="submit">Calculate</button>

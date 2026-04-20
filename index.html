@@ -7,21 +7,25 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>CRYPTO CONVERTER</h1>
     <div id="img-container">
         <img src="sources/undraw-bitcoin.svg" alt="bitcoin">
         <div id="crypto-container">
             <form id="crypto-quoter-form">
                 <div class="input-container">
-                    <label for="currency">Select your currency</label>
+                    <label for="currency">YOU GIVE</label>
+                    <div class="currency">
+                    <input type="number" class="coin-input" id="amount" placeholder="Amount">
                     <select class="coin-input" id="currency">
                         <option selected disabled value="">Select your currency</option>
-                        <option value="USD">U.S Dollar</option>
-                        <option value="EUR">Euro</option>
-                        <option value="ARS">Pesos argentinos</option>
+                        <option value="USD"><img src="./sources/united-states-flag-icon.svg" alt="U.S-flag">🇺🇸 U.S Dollar</option>
+                        <option value="EUR">🇪🇺 Euro</option>
+                        <option value="ARS">🇦🇷 Pesos argentinos</option>
                     </select>
+                    </div>
                 </div>
                 <div class="input-container">
-                    <label for="crypto">Select your cryptocurrency</label>
+                    <label for="crypto">TO</label>
                     <select class="crypto-input" id="cryptocurrency">
                         <option selected disabled value="">Select your cryptocurrency</option>
                         <option value="BTC">Bitcoin</option>
@@ -30,11 +34,7 @@
                         <option value="BNB">Binance crypto</option>
                     </select>
                 </div>
-                <div class="input-container">
-                    <label for="crypto">Enter the amount</label>
-                    <input type="number" class="coin-input" id="amount" placeholder="Amount">
-                </div>
-                <button id="form-btn" type="submit">Calculate</button>
+                <button id="form-btn" type="submit">CALCULATE</button>
             </form>
             <div id="crypto-info"></div>
         </div>

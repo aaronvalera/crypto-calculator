@@ -19,7 +19,7 @@ form.addEventListener("submit", async event => {
         const trend24H = response.DISPLAY[cryptoSelected][currencySelected].CHANGEPCT24HOUR;
         const quoteResult = amountValue / currentPrice;
         cryptoInfo.innerHTML = `
-            <p class="info">Price is: <span class="price">$${currentPrice}</span></p>
+            <p class="info price">Price is: <span class="price">$${currentPrice}</span></p>
             <p class="info">Highest price is: <span class="price">${highest24HPrice}</span></p>
             <p class="info">Lowest price is: <span class="price">${lowest24HPrice}</span></p>
             <p class="info">Trend 24H: <span class="price">${trend24H}%</span></p>

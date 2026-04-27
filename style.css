@@ -166,6 +166,10 @@ span svg {
     color: #e51a1a;
 }
 
+.can-buy {
+    color: rgb(255, 255, 0);
+}
+
 /* Loader */
 
 .loader {

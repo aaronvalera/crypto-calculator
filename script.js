@@ -5,7 +5,6 @@ const cryptos = document.querySelector("#cryptocurrency");
 const amount = document.querySelector("#amount");
 const cryptoInfo = document.querySelector("#crypto-info");
 const submitFormBtn = document.querySelector("#form-btn");
-console.log(Boolean(cryptos.selected))
 
 const enableFormBtn = () => { 
     const isFormValid = currencies.value !== "" &&
@@ -42,14 +41,12 @@ form.addEventListener("submit", async event => {
         const quoteResult = amountValue / currentPrice;
         cryptoInfo.innerHTML = `
             <p class="info price">Price is: <span class="price">${currencySymbol} ${currentPrice}</span></p>
-            <p class="info">Highest price is: <span class="price">${highest24HPrice}</span></p>
-            <p class="info">Lowest price is: <span class="price">${lowest24HPrice}</span></p>
+            <p class="info">Highest price is: <span class="up-trend">${highest24HPrice}</span></p>
+            <p class="info">Lowest price is: <span class="down-trend">${lowest24HPrice}</span></p>
             <p class="info">Trend 24H: <span class="${trendClass}">${trend24H}%${trendIcon}</span></p>
-            <p class="info">You can buy: <span class="price">${quoteResult.toFixed(2)} ${cryptoSelected}</span></p>
+            <p class="info">You can buy: <span class="can-buy">${quoteResult.toFixed(2)} ${cryptoSelected}</span></p>
         `;
     } catch (error) {
     console.log(error);
     };
 });
-enableFormBtn();
-console.log(Boolean(cryptos.value))

@@ -13,16 +13,16 @@ const enableFormBtn = () => {
 
     submitFormBtn.disabled = !isFormValid;
     if(isFormValid) {
-        submitFormBtn.classList.add("valid-form");
+        submitFormBtn.classList.add("enable-submit-form");
     } else {
-        submitFormBtn.classList.remove("valid-form");
+        submitFormBtn.classList.remove("enable-submit-form");
     };
 }
 
+// Event Listeners
 currencies.addEventListener("change", enableFormBtn);
 cryptos.addEventListener("change", enableFormBtn);
 amount.addEventListener("input", enableFormBtn);
-
 form.addEventListener("submit", async event => {
     event.preventDefault();
     const currencySelected = [...currencies.children].find(currency => currency.selected).value;
@@ -40,7 +40,7 @@ form.addEventListener("submit", async event => {
         const currencySymbol = response.DISPLAY[cryptoSelected][currencySelected].TOSYMBOL;
         const quoteResult = amountValue / currentPrice;
         cryptoInfo.innerHTML = `
-            <p class="info price">Price is: <span class="price">${currencySymbol} ${currentPrice}</span></p>
+            <p class="price">Price is: <span class="price">${currencySymbol} ${currentPrice}</span></p>
             <p class="info">Highest price is: <span class="up-trend">${highest24HPrice}</span></p>
             <p class="info">Lowest price is: <span class="down-trend">${lowest24HPrice}</span></p>
             <p class="info">Trend 24H: <span class="${trendClass}">${trend24H}%${trendIcon}</span></p>

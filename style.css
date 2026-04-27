@@ -134,16 +134,11 @@ span svg {
     background: #2affbc;
 }
 
-.valid-form {
+.enable-submit-form {
     background: #20f0aa;
     box-shadow: 0 0.25rem 0.95rem #20f0aa40;
     cursor: pointer;
     transition: all 0.4s ease;
-}
-
-.unvalid-form {
-    background: #e2e3e575;
-    box-shadow: none;
 }
 
 #crypto-info p.price {

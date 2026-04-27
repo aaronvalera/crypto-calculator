@@ -153,6 +153,15 @@ span svg {
     font-size: 1.1rem;
 }
 
+footer {
+    margin: 1rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .up-trend {
     color: #20f0aa;
 }

@@ -7,27 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>CRYPTO CONVERTER</h1>
     <div id="img-container">
-        <img src="sources/undraw-bitcoin.svg" alt="bitcoin">
+        <h1>CRYPTO CALCULATOR</h1>
         <div id="crypto-container">
             <form id="crypto-quoter-form">
                 <div class="input-container">
                     <label for="currency">YOU GIVE</label>
-                    <div class="currency">
                     <input type="number" class="coin-input" id="amount" placeholder="Amount">
                     <select class="coin-input" id="currency">
                         <option selected disabled value="">Select your currency</option>
-                        <option value="USD"><img src="./sources/united-states-flag-icon.svg" alt="U.S-flag">🇺🇸 U.S Dollar</option>
+                        <option value="USD">🇺🇸 U.S Dollar</option>
                         <option value="EUR">🇪🇺 Euro</option>
                         <option value="ARS">🇦🇷 Pesos argentinos</option>
                     </select>
-                    </div>
                 </div>
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5"/>
+                    </svg>
+                </span>
                 <div class="input-container">
                     <label for="crypto">TO</label>
                     <select class="crypto-input" id="cryptocurrency">
-                        <option selected disabled value="">Select your cryptocurrency</option>
+                        <option selected disabled value="">Select a cryptocurrency</option>
                         <option value="BTC">Bitcoin</option>
                         <option value="ETH">Ethereum</option>
                         <option value="AXS">AXS</option>

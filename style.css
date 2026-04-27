@@ -8,7 +8,6 @@ body {
     min-height: 100vh;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background: #121212;
-    background-image: url(./sources/crypto-bg.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -17,6 +16,7 @@ body {
     text-align: center;
 }
 
+body,
 #img-container,
 #crypto-quoter-form,
 .input-container {
@@ -36,16 +36,27 @@ label {
     width: 100%;
 }
 
+#img-container {
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
 h1 {
     letter-spacing: 0.4rem;
+    background: linear-gradient(135deg, #20f0aa, #fff);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    display: inline-block;
 }
 
 #crypto-container {
-    background: linear-gradient(180deg, #2e407d26 0%, #2c3a622b 100%);
+    background: linear-gradient(180deg, #2c3f7f26 0%, #2d3e6c2b 100%);
     border: 0.065rem solid #ffffff14;
     border-radius: 1rem;
-    padding: 2.188rem 1.875rem;
-    max-width: 40%;
+    padding: 1.1rem 1.875rem;
+    max-width: 50%;
 }
 
 #crypto-quoter-form {
@@ -103,7 +114,7 @@ select:focus, input:focus {
     color: #0b1c16;
     border: none;
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 0.8rem;
     letter-spacing: 0.08rem;
     font-weight: 700;
     margin-top: 0.5rem;
@@ -124,14 +135,14 @@ select:focus, input:focus {
 
 #crypto-info p.price {
     color: #20f0aa;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.35rem;
 }
 
 #crypto-info {
     color: #8a9bb0;
-    font-size: 0.85rem;
+    font-size: 1.1rem;
 }
 
 .input-container {
@@ -139,17 +150,18 @@ select:focus, input:focus {
     gap: 0.35rem;
 }
 
-#currency {
-    padding: 0.8rem;
+span svg {
+   color: #20f0aa;
+    height: 2rem;
+    width: 2rem;
 }
 
-#img-container {
-    flex-direction: row;
+.up-trend {
+    color: #20f0aa;
 }
 
-img {
-    max-width: 60%;
-    display: none;
+.down-trend {
+    color: #e51a1a;
 }
 
 /* Loader */
@@ -185,6 +197,41 @@ img {
   }
 } 
 
-#crypto-info {
-    /* color: #00FFA3; */
+/* Smartphones */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem; 
+        letter-spacing: 0.1rem;
+    }
+
+    #crypto-container {
+        max-width: 95%;
+        padding: 1rem;
+    }
+
+    #crypto-quoter-form {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    #img-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    select, input {
+        padding: 0.8rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    #img-container {
+        padding: 1rem;
+    }
 }

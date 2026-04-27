@@ -74,6 +74,10 @@ label {
     letter-spacing: 0.08rem;
 }
 
+.input-container {
+    gap: 0.35rem;
+}
+
 select, input {
     border-radius: 0.5rem;
     border: 0.065rem solid #ffffff3e;
@@ -84,6 +88,11 @@ select, input {
     font-weight: 500;
     outline: none;
     transition: all 0.3s ease;
+}
+
+select:focus, input:focus {
+    border-color: #20f0aa;
+    box-shadow: 0 0 0 0.065rem #20f0aa;
 }
 
 select {
@@ -104,33 +113,37 @@ input::placeholder {
     color: #636e84;
 }
 
-select:focus, input:focus {
-    border-color: #20f0aa;
-    box-shadow: 0 0 0 0.065rem #20f0aa;
+span svg {
+   color: #20f0aa;
+    height: 2rem;
+    width: 2rem;
 }
 
 #form-btn {
-    background: #20f0aa;
-    color: #0b1c16;
     border: none;
     border-radius: 0.5rem;
     padding: 0.8rem;
     letter-spacing: 0.08rem;
     font-weight: 700;
     margin-top: 0.5rem;
-    box-shadow: 0 0.25rem 0.95rem #20f0aa40;
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-#form-btn:hover {
+#form-btn:enabled#form-btn:hover {
     box-shadow: 0 0.4rem 1.25rem #20f0aa66;
     transform: translateY(-0.65rem);
     background: #2affbc;
 }
 
-#crypto-info:not(:empty) {
-    display: block;
+.valid-form {
+    background: #20f0aa;
+    box-shadow: 0 0.25rem 0.95rem #20f0aa40;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.unvalid-form {
+    background: #e2e3e575;
+    box-shadow: none;
 }
 
 #crypto-info p.price {
@@ -143,17 +156,6 @@ select:focus, input:focus {
 #crypto-info {
     color: #8a9bb0;
     font-size: 1.1rem;
-}
-
-.input-container {
-    flex: 1;
-    gap: 0.35rem;
-}
-
-span svg {
-   color: #20f0aa;
-    height: 2rem;
-    width: 2rem;
 }
 
 .up-trend {

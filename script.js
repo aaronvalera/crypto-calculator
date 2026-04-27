@@ -4,6 +4,25 @@ const currencies = document.querySelector("#currency");
 const cryptos = document.querySelector("#cryptocurrency");
 const amount = document.querySelector("#amount");
 const cryptoInfo = document.querySelector("#crypto-info");
+const submitFormBtn = document.querySelector("#form-btn");
+console.log(Boolean(cryptos.selected))
+
+const enableFormBtn = () => { 
+    const isFormValid = currencies.value !== "" &&
+                        cryptos.value !== "" &&
+                        amount.value !== ""
+
+    submitFormBtn.disabled = !isFormValid;
+    if(isFormValid) {
+        submitFormBtn.classList.add("valid-form");
+    } else {
+        submitFormBtn.classList.remove("valid-form");
+    };
+}
+
+currencies.addEventListener("change", enableFormBtn);
+cryptos.addEventListener("change", enableFormBtn);
+amount.addEventListener("input", enableFormBtn);
 
 form.addEventListener("submit", async event => {
     event.preventDefault();
@@ -32,3 +51,5 @@ form.addEventListener("submit", async event => {
     console.log(error);
     };
 });
+enableFormBtn();
+console.log(Boolean(cryptos.value))

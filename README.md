@@ -1,4 +1,4 @@
-# 🪙📊 Crypto Calculator
+# 📊 Crypto Calculator
 
 A modern, high-contrast webpage to calculate cryptocurrency conversions in real-time! 🚀
 

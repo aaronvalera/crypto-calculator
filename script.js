@@ -31,20 +31,20 @@ form.addEventListener("submit", async event => {
     try {
         cryptoInfo.innerHTML = `<span class="loader"></span>`;
         const response = await (await fetch(`https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cryptoSelected}&tsyms=${currencySelected}`)).json();
-        const currentPrice = response.RAW[cryptoSelected][currencySelected].PRICE.toFixed(2);
+        const currentRawPrice = response.RAW[cryptoSelected][currencySelected].PRICE;
+        const currentDisplayPrice = response.DISPLAY[cryptoSelected][currencySelected].PRICE;
         const highest24HPrice = response.DISPLAY[cryptoSelected][currencySelected].HIGH24HOUR;
         const lowest24HPrice = response.DISPLAY[cryptoSelected][currencySelected].LOW24HOUR;
         const trend24H = response.DISPLAY[cryptoSelected][currencySelected].CHANGEPCT24HOUR;
         const trendClass = trend24H >= 0 ? "up-trend" : "down-trend";
         const trendIcon = trend24H >= 0 ? "▲" : "▼";
-        const currencySymbol = response.DISPLAY[cryptoSelected][currencySelected].TOSYMBOL;
-        const quoteResult = amountValue / currentPrice;
+        const quoteResult = amountValue / currentRawPrice;
         cryptoInfo.innerHTML = `
-            <p class="price">Price is: <span class="price">${currencySymbol} ${currentPrice}</span></p>
+            <p class="price">Price: <span class="price">${currentDisplayPrice}</span></p>
             <p class="info">Highest price 24H: <span class="up-trend">${highest24HPrice}</span></p>
             <p class="info">Lowest price 24H: <span class="down-trend">${lowest24HPrice}</span></p>
             <p class="info">Trend 24H: <span class="${trendClass}">${trend24H}%${trendIcon}</span></p>
-            <p class="info">You can buy: <span class="can-buy">${quoteResult.toFixed(2)} ${cryptoSelected}</span></p>
+            <p class="info">You can buy: <span class="can-buy">${quoteResult.toFixed(5)} ${cryptoSelected}</span></p>
         `;
     } catch (error) {
     console.log(error);
